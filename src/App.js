@@ -4,26 +4,19 @@ import Navbar from "./components/navbar";
 import VerifyOTP from "./components/VerifyOTP";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import HomePage from './components/Homepage';
+import SendEmail from "./components/SendEmail";
 
 function App() {
   return (
     <div className="App">
-      <Navbar isLoggedIn={true} username="John" />
-
       <Router>
-      <Switch>
-        <Route path="/" exact component={HomePage} />
-        {/* Add more routes for other pages if needed */}
-      </Switch>
+        <Navbar isLoggedIn={true} username="John" />
+        <Route path="/" exact component={Home} />
+        <Route path="/profile" component={Profile} /> 
       </Router>
-      
-      <header>
-        <div>
-          <VerifyOTP />
-        </div>
-      </header>
     </div>
   );
 }
 
 export default App;
+

@@ -19,3 +19,4 @@ const Navbar = ({ isLoggedIn, username }) => {
 };
 
 export default Navbar;
+
