@@ -1,10 +1,10 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Navbar from './components/navbar';
-import Home from './components/Home';
-import Profile from './components/Profile';
-import SendEmail from './components/SendEmail';
-import Login from './components/Login';
+import logo from "./logo.svg";
+import "./App.css";
+import Navbar from "./components/navbar";
+import VerifyOTP from "./components/VerifyOTP";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import HomePage from './components/Homepage';
+import SendEmail from "./components/SendEmail";
 
 function App() {
   return (
