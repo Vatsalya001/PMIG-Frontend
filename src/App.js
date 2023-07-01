@@ -5,6 +5,8 @@ import VerifyOTP from "./components/VerifyOTP";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import HomePage from './components/Homepage';
 import SendEmail from "./components/SendEmail";
+import LoginForm from './src/loginpage.js'
+import ProfilePage from "./components/Profile";
 
 function App() {
   return (
