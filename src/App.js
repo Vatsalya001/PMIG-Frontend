@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
+import LoginForm from './src/loginpage.js'
   function App() {
     return (
       <div className="App">
@@ -20,6 +20,11 @@ import './App.css';
         </header>
       </div>
     );
+    return(
+      <div>
+        <LoginForm/>
+      </div>
+    )
     }
 
 export default App;
