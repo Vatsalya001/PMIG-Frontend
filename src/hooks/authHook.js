@@ -38,7 +38,6 @@ export const useProvideAuth = () => {
         response.data.token ? response.data.token : null
       );
       setUser(response.data.user);
-      console.log(response.data);
       toast("Logged in successfully", {
         position: "top-left",
         autoClose: 3000,

@@ -1,0 +1,14 @@
+.navbar {
+  height: 60px;
+  box-shadow: 0px 2px 10px 2px var(--descColor);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  font-size: 25px;
+}

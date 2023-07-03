@@ -1,0 +1,25 @@
+.authPage {
+  height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+.inputField {
+  outline: none;
+  width: 200px;
+  height: 30px;
+  border: 1px solid rgb(191, 191, 191);
+  border-radius: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  padding: 3px;
+}
