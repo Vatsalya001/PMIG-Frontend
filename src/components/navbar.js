@@ -1,22 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Navbar = ({ isLoggedIn, username }) => {
-  return (
-    <nav>
-      <div>
-        <Link to="/">Home</Link>
-      </div>
-      <div>
-        {isLoggedIn ? (
-          <Link to="/profile">{username}</Link>
-        ) : (
-          <Link to="/login">Login</Link>
-        )}
-      </div>
-    </nav>
-  );
+const Navbar = () => {
+  return <div></div>;
 };
 
 export default Navbar;
-

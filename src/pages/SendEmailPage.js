@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const SendEmail = () => {
+const SendEmailPage = () => {
   return (
     <div>
       <h2>Send Email</h2>
@@ -9,4 +9,4 @@ const SendEmail = () => {
   );
 };
 
-export default SendEmail;
+export default SendEmailPage;
