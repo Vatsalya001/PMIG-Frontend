@@ -5,6 +5,11 @@ import "react-toastify/dist/ReactToastify.css";
 import { login_API, editUser_API } from "../api";
 import jwtDecode from "jwt-decode";
 import { LOCALSTORAGE_TOKEN_KEY } from "../utils";
+import {
+  getItemInLocalStorage,
+  setItemInLocalStorage,
+  removeItemInLocalStorage,
+} from "../utils";
 export const useAuth = () => {
   return useContext(AuthContext);
 };

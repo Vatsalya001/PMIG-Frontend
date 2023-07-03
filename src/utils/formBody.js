@@ -1,4 +1,4 @@
-export default getFormBody = (params) => {
+const getFormBody = (params) => {
   let formBody = [];
 
   for (let property in params) {
@@ -10,3 +10,5 @@ export default getFormBody = (params) => {
 
   return formBody.join("&");
 };
+
+export default getFormBody;

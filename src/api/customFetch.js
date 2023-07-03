@@ -1,5 +1,5 @@
 import { getFormBody, LOCALSTORAGE_TOKEN_KEY } from "../utils";
-export default customFetch = async (url, { body, ...customConfig }) => {
+const customFetch = async (url, { body, ...customConfig }) => {
   const token = window.localStorage.getItem(LOCALSTORAGE_TOKEN_KEY);
   const headers = {
     "content-type": "application/x-www-form-urlencoded",
@@ -37,3 +37,5 @@ export default customFetch = async (url, { body, ...customConfig }) => {
     };
   }
 };
+
+export default customFetch;

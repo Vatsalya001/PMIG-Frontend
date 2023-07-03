@@ -1,5 +1,5 @@
 const API_ROOT = "http://localhost:8000/api/v1";
-export const API_URLS = {
+const API_URLS = {
   sendOTP: () => `${API_ROOT}/users/send-otp`,
   verifyOTP: () => `${API_ROOT}/users/verify-otp`,
   signup: () => `${API_ROOT}/users/signup`,
@@ -13,5 +13,6 @@ export const API_URLS = {
   editPublication: (publicationId) =>
     `${API_ROOT}/publications/edit/${publicationId}`,
 };
+const LOCALSTORAGE_TOKEN_KEY = "__PMIG_token__";
 
-export const LOCALSTORAGE_TOKEN_KEY = "__PMIG_token__";
+export { LOCALSTORAGE_TOKEN_KEY, API_URLS };
