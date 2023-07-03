@@ -1,12 +1,6 @@
 import "../css/App.css";
 import { Navbar } from "/";
-import {
-  HomePage,
-  ProfilePage,
-  SendEmailPage,
-  VerifyOTPPage,
-  LoginPage,
-} from "../pages";
+import { HomePage, ProfilePage, Auth } from "../pages";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { useAuth } from "../hooks";
@@ -36,27 +30,8 @@ function App() {
           <Route exact path="/" element={<HomePage />}></Route>
           <Route
             exact
-            path="/login"
-            element={auth.user ? <Navigate replace to="/" /> : <LoginPage />}
-          ></Route>
-          <Route
-            exact
-            path="/send-otp"
-            element={
-              auth.user ? <Navigate replace to="/" /> : <SendEmailPage />
-            }
-          ></Route>
-          <Route
-            exact
-            path="/verify-otp"
-            element={
-              auth.user ? <Navigate replace to="/" /> : <VerifyOTPPage />
-            }
-          ></Route>
-          <Route
-            exact
-            path="/register"
-            element={auth.user ? <Navigate replace to="/" /> : <HomePage />}
+            path="/auth"
+            element={auth.user ? <Navigate replace to="/" /> : <Auth />}
           ></Route>
           <Route
             exact

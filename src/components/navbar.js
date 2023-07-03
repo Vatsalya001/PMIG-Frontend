@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className={styles.left}>PMIG</div>
       <div className={styles.right}>
         {!auth.user ? (
-          <Link to="/login">
+          <Link to="/auth">
             <Button text="Login" />
           </Link>
         ) : (

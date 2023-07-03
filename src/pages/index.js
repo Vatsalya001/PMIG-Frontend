@@ -1,7 +1,5 @@
 import HomePage from "./Homepage";
-import LoginPage from "./LoginPage";
 import ProfilePage from "./ProfilePage";
-import SendEmailPage from "./SendEmailPage";
-import VerifyOTPPage from "./VerifyOTPPage";
+import Auth from "./Auth";
 
-export { HomePage, LoginPage, ProfilePage, SendEmailPage, VerifyOTPPage };
+export { HomePage, ProfilePage, Auth };

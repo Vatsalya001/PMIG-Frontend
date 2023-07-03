@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Button } from "../components";
 import styles from "../css/auth.module.css";
 import { useAuth } from "../hooks";
-const LoginPage = () => {
+
+const LoginPage = (props) => {
   const auth = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -33,6 +34,12 @@ const LoginPage = () => {
           text="Login"
           onClick={(e) => {
             handleLogin(e);
+          }}
+        />
+        <Button
+          text="Register"
+          onClick={() => {
+            props.setScreen("sendOTP");
           }}
         />
       </form>

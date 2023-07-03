@@ -52,6 +52,16 @@ export const useProvideAuth = () => {
         success: true,
       };
     } else {
+      toast(`${response.message}`, {
+        position: "top-left",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       return {
         success: false,
         message: response.message,
