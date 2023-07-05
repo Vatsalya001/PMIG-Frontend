@@ -1,6 +1,6 @@
 import "../css/App.css";
-import { Navbar } from "/";
-import { HomePage, ProfilePage, Auth } from "../pages";
+import { Navbar } from "./index";
+import { HomePage, ProfilePage, Auth,PublishPaper } from "../pages";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { useAuth } from "../hooks";
@@ -39,6 +39,7 @@ function App() {
             element={!auth.user ? <Navigate replace to="/" /> : <ProfilePage />}
           ></Route>
         </Routes>
+        <PublishPaper/>
       </BrowserRouter>
     </div>
   );
