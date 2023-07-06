@@ -15,7 +15,11 @@ const Navbar = () => {
           </Link>
         ) : (
           <div>
-            <Button text={auth.user.username} />
+            <Link to="/ProfilePage">
+              <Button
+                text={auth.user.username}
+              />
+            </Link>
             <Button
               text="Logout"
               onClick={() => {
