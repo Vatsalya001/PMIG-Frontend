@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "../css/navbar.module.css";
 import { Button } from "/";
 import { useAuth } from "../hooks";
+
 const Navbar = () => {
   const auth = useAuth();
   return (
@@ -15,13 +16,18 @@ const Navbar = () => {
           </Link>
         ) : (
           <div>
-            <Button text={auth.user.username} />
+            <Link to={`/Profile`}>
+              <Button text={auth.user.username} />
+            </Link>
             <Button
               text="Logout"
               onClick={() => {
                 auth.logout();
               }}
             />
+            <Link to="/publish">
+              <Button text="Publish Paper" />
+            </Link>
           </div>
         )}
       </div>

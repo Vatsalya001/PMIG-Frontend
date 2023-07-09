@@ -2,7 +2,6 @@ import { getFormBody, LOCALSTORAGE_TOKEN_KEY } from "../utils";
 const customFetch = async (url, { body, ...customConfig }) => {
   const token = window.localStorage.getItem(LOCALSTORAGE_TOKEN_KEY);
   const headers = {
-    "content-type": "application/x-www-form-urlencoded",
     Accept: "application/json",
   };
   if (token) {
@@ -15,8 +14,10 @@ const customFetch = async (url, { body, ...customConfig }) => {
       ...customConfig.headers,
     },
   };
-  if (body) {
+  if (body && !customConfig.isMulti) {
     config.body = getFormBody(body);
+  } else {
+    config.body = body;
   }
   try {
     const response = await fetch(url, config);
@@ -27,7 +28,7 @@ const customFetch = async (url, { body, ...customConfig }) => {
         success: true,
       };
     }
-    // console.log(response);
+    console.log(data);
     throw new Error(data.message);
   } catch (error) {
     console.log("Error in Fetching Data: ", error);
