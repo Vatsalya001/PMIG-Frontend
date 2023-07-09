@@ -1,6 +1,6 @@
 import "../css/App.css";
 import { Navbar } from "./index";
-import { HomePage, ProfilePage, Auth,PublishPaper } from "../pages";
+import { HomePage, ProfilePage, Auth, PublishPaper } from "../pages";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { useAuth } from "../hooks";
@@ -38,8 +38,19 @@ function App() {
             path="/profile"
             element={!auth.user ? <Navigate replace to="/" /> : <ProfilePage />}
           ></Route>
+          <Route
+            exact
+            path="/publish"
+            element={
+              !auth.user ? <Navigate replace to="/" /> : <PublishPaper />
+            }
+          ></Route>
+          <Route
+            exact
+            path="*"
+            element={<h1>Error 404: Page Not Found</h1>}
+          ></Route>
         </Routes>
-        <PublishPaper/>
       </BrowserRouter>
     </div>
   );

@@ -1,6 +1,5 @@
 import { API_URLS } from "../utils";
 import { customFetch } from "/";
-
 //function to send OTP
 export const sendOTP_API = (username) => {
   return customFetch(API_URLS.sendOTP(), {
@@ -60,14 +59,15 @@ export const getAllPublications_API = () => {
 };
 
 // function to publish a paper
-export const publish_API = (paper, title, description) => {
+export const publish_API = async (paper, title, description) => {
+  const formData = new FormData();
+  formData.append("paper", paper);
+  formData.append("title", title);
+  formData.append("description", description);
   return customFetch(API_URLS.publish(), {
     method: "POST",
-    body: {
-      paper,
-      title,
-      description,
-    },
+    body: formData,
+    isMulti: true,
   });
 };
 

@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 import styles from "../css/navbar.module.css";
 import { Button } from "/";
 import { useAuth } from "../hooks";
-import { useGlobalContext } from "../providers/modalProvider";
 
 const Navbar = () => {
   const auth = useAuth();
-  const {openModal} = useGlobalContext();
   return (
     <div className={styles.navbar}>
       <div className={styles.left}>PMIG</div>
@@ -18,10 +16,8 @@ const Navbar = () => {
           </Link>
         ) : (
           <div>
-            <Link to="/ProfilePage">
-              <Button
-                text={auth.user.username}
-              />
+            <Link to={`/Profile`}>
+              <Button text={auth.user.username} />
             </Link>
             <Button
               text="Logout"
@@ -29,7 +25,9 @@ const Navbar = () => {
                 auth.logout();
               }}
             />
-            <Button text="Publish" onClick={openModal} />
+            <Link to="/publish">
+              <Button text="Publish Paper" />
+            </Link>
           </div>
         )}
       </div>

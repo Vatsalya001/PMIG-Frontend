@@ -1,6 +1,5 @@
 import styles from "../css/publicationCard.module.css";
 import React, { useState } from "react";
-import Modal from "./PublicationModal";
 
 const PublicationCard = (props) => {
   const { title, paper, desc, isEditable } = props;
@@ -8,21 +7,21 @@ const PublicationCard = (props) => {
   const [editedTitle, setEditedTitle] = useState(title);
   const [editedDesc, setEditedDesc] = useState(desc);
 
-  const handleEditClick = () => {
-    setIsModalOpen(true);
-  };
+  // const handleEditClick = () => {
+  //   setIsModalOpen(true);
+  // };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  // const handleFormSubmit = (e) => {
+  //   e.preventDefault();
 
-    setEditedTitle(editedTitle);
-    setEditedDesc(editedDesc);
-    setIsModalOpen(false);
-  };
+  //   setEditedTitle(editedTitle);
+  //   setEditedDesc(editedDesc);
+  //   setIsModalOpen(false);
+  // };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  // const handleCloseModal = () => {
+  //   setIsModalOpen(false);
+  // };
 
   return (
     <div className={styles.pubCard}>
@@ -30,8 +29,8 @@ const PublicationCard = (props) => {
       <p className={styles.desc}>{desc}</p>
       <a href={paper}>View Paper</a>
 
-      {isEditable && <button onClick={handleEditClick}>Edit</button>}
-
+      {/* {isEditable && <button onClick={handleEditClick}>Edit</button>} */}
+      {/* 
       {isModalOpen && (
         <Modal onClose={handleCloseModal}>
           <form onSubmit={handleFormSubmit}>
@@ -53,7 +52,7 @@ const PublicationCard = (props) => {
             <button type="submit">Save</button>
           </form>
         </Modal>
-      )}
+      )} */}
     </div>
   );
 };
