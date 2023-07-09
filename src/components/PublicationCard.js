@@ -1,58 +1,42 @@
-import styles from "../css/publicationCard.module.css";
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import styles from '../css/publicationCard.module.css';
 
 const PublicationCard = (props) => {
-  const { title, paper, desc, isEditable } = props;
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [editedTitle, setEditedTitle] = useState(title);
-  const [editedDesc, setEditedDesc] = useState(desc);
+  const { title, paper, desc, user, isCurrentUser } = props;
+  const [likes, setLikes] = useState(0);
 
-  // const handleEditClick = () => {
-  //   setIsModalOpen(true);
-  // };
+  const handleLike = () => {
+    setLikes((prevLikes) => prevLikes + 1);
+  };
 
-  // const handleFormSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   setEditedTitle(editedTitle);
-  //   setEditedDesc(editedDesc);
-  //   setIsModalOpen(false);
-  // };
-
-  // const handleCloseModal = () => {
-  //   setIsModalOpen(false);
-  // };
+  const handleEdit = () => {
+    // Implement edit functionality
+    console.log('Edit button clicked');
+  };
 
   return (
     <div className={styles.pubCard}>
-      <h3 className={styles.title}>{title}</h3>
-      <p className={styles.desc}>{desc}</p>
-      <a href={paper}>View Paper</a>
-
-      {/* {isEditable && <button onClick={handleEditClick}>Edit</button>} */}
-      {/* 
-      {isModalOpen && (
-        <Modal onClose={handleCloseModal}>
-          <form onSubmit={handleFormSubmit}>
-            <label>
-              Title:
-              <input
-                type="text"
-                value={editedTitle}
-                onChange={(e) => setEditedTitle(e.target.value)}
-              />
-            </label>
-            <label>
-              Description:
-              <textarea
-                value={editedDesc}
-                onChange={(e) => setEditedDesc(e.target.value)}
-              />
-            </label>
-            <button type="submit">Save</button>
-          </form>
-        </Modal>
-      )} */}
+      <div className={styles.userDetails}>
+        <img src={user.profilePicture} alt="Profile" className={styles.profilePicture} />
+        <span className={styles.userName}>{user.name}</span>
+      </div>
+      <div className={styles.publicationDetails}>
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.desc}>{desc}</p>
+      </div>
+      <div className={styles.actionButtons}>
+        <button className={styles.likeButton} onClick={handleLike}>
+          Like ({likes})
+        </button>
+        {isCurrentUser && (
+          <button className={styles.editButton} onClick={handleEdit}>
+            Edit Paper
+          </button>
+        )}
+      </div>
+      <a href={paper} className={styles.viewPaperButton}>
+        View Paper
+      </a>
     </div>
   );
 };
