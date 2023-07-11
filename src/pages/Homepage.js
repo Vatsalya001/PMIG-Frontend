@@ -29,11 +29,7 @@ const HomePage = () => {
         <ul className={styles.pubs}>
           {pubs.map((pub) => (
             <li className={styles.pub}>
-              <PublicationCard
-                title={pub.title}
-                desc={pub.description}
-                paper={pub.paper}
-              />
+              <PublicationCard publication={pub} />
             </li>
           ))}
         </ul>
